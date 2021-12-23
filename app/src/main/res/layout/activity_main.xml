@@ -10,10 +10,79 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:padding="16dp"
         tools:context=".MainActivity">
+
+        <ImageView
+            android:id="@+id/hero_image"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            tools:src="@android:drawable/ic_menu_camera" />
+
+        <EditText
+            android:id="@+id/hero_name_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/hero_image"
+            android:layout_toEndOf="@id/hero_image"
+            android:hint="Super hero name" />
+
+        <EditText
+            android:id="@+id/alter_ego_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/hero_image"
+            android:layout_toEndOf="@id/hero_image"
+            android:hint="Alter ego" />
+
+        <View
+            android:id="@+id/separator"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/hero_image"
+            android:layout_marginTop="16dp"
+            android:background="@color/black" />
+
         <TextView
+            android:id="@+id/bio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/separator"
+            android:layout_marginTop="16dp"
+            android:text="Bio"
+            android:textAlignment="center" />
+
+        <EditText
+            android:id="@+id/bio_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/bio"
+            android:layout_marginTop="16dp" />
+
+
+        <TextView
+            android:id="@+id/poder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/bio_edit"
+            android:layout_marginTop="16dp"
+            android:text="Poder"
+            android:textAlignment="center" />
+
+        <RatingBar
+            android:id="@+id/poder_bar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hello!"/>
+            android:layout_below="@id/poder"
+            android:layout_centerHorizontal="true"
+            android:progressTint="@color/yellow"
+            android:layout_marginTop="16dp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="Guardar" />
+
     </RelativeLayout>
 </layout>
