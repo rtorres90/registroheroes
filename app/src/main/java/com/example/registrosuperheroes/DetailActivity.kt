@@ -6,10 +6,7 @@ import com.example.registrosuperheroes.databinding.ActivityDetailBinding
 
 class DetailActivity : AppCompatActivity() {
     companion object{
-        const val SUPERHERO_NAME_KEY = "superhero_name"
-        const val ALTER_EGO_KEY = "alter_ego"
-        const val BIO_KEY = "bio"
-        const val POWER_KEY = "power"
+        const val SUPERHERO_KEY = "superhero"
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,14 +14,11 @@ class DetailActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val bundle = intent.extras!!
-        val superHeroName = bundle.getString(SUPERHERO_NAME_KEY) ?: ""
-        val alterEgo = bundle.getString(ALTER_EGO_KEY) ?: ""
-        val bio = bundle.getString(BIO_KEY) ?: ""
-        val power = bundle.getFloat(POWER_KEY)
+        val superHero = bundle.getParcelable<Superhero>(SUPERHERO_KEY)!!
 
-        binding.heroName.text = superHeroName
-        binding.alterEgoText.text = alterEgo
-        binding.bioText.text = bio
-        binding.detailPoderBar.rating = power
+        binding.heroName.text = superHero.name
+        binding.alterEgoText.text = superHero.alterEgo
+        binding.bioText.text = superHero.bio
+        binding.detailPoderBar.rating = superHero.power
     }
 }
